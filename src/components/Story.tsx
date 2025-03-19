@@ -25,10 +25,12 @@ const Story = () => {
     const centerY = rect.height / 2;
 
     const rotateX = ((y - centerY) / centerY) * -10;
+
     const rotateY = ((x - centerX) / centerY) * 10;
+    // console.log(rotateY);
 
     gsap.to(element, {
-      duration: 0.3,
+      duration: 0.1,
       rotateX,
       rotateY,
       transformPerspective: 500,

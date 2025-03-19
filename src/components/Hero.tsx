@@ -100,32 +100,35 @@ export const Hero = () => {
               onClick={hadleMiniVideoClick}
               className="origin-center scale-50 opacity-0 transition-all duration-500 easein hover:scale-100 hover:opacity-100"
             >
+              {/* mini video */}
               <video
                 ref={nextVideoRef}
                 src={getVideoSrc((currIndex + 1) % totVids)}
                 loop
                 muted
                 id="current-video"
-                className="size-64 origin-center scale-150 object-cover object-center"
+                className="size-64 pointer-events-none origin-center scale-150 object-cover object-center"
                 onLoadedData={hadleVideoLoad}
               />
             </div>
           </div>
+          {/* initial video */}
           <video
             ref={nextVideoRef}
             src={getVideoSrc(currIndex)}
             loop
             muted
             id="next-video"
-            className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+            className="absolute-center saturate-150 invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={hadleVideoLoad}
           />
+          {/* zoom effect video */}
           <video
             src={getVideoSrc(currIndex)}
-            // autoPlay
+            autoPlay
             loop
             muted
-            className="absolute left-0 top-0 size-full object-cover object-center"
+            className="absolute left-0 top-0 saturate-150 size-full object-cover object-center"
             onLoadedData={hadleVideoLoad}
           />
         </div>
