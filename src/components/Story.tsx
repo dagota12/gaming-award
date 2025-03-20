@@ -7,7 +7,18 @@ import Button from "./Button";
 const Story = () => {
   const frameRef = useRef<HTMLImageElement>(null);
 
-  const handleMouseLeave = () => {};
+  const handleMouseLeave = () => {
+    const element = frameRef.current;
+
+    if (element) {
+      gsap.to(element, {
+        duration: 0.3,
+        rotateX: 0,
+        rotateY: 0,
+        ease: "power1.inOut",
+      });
+    }
+  };
   const handleMouseMove = (
     e: React.MouseEvent<HTMLImageElement, MouseEvent>
   ) => {
